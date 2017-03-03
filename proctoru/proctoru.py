@@ -374,7 +374,8 @@ class ProctorUXBlock(StudioContainerXBlockMixin, XBlock):
 
                     allowed_keep_old_exam = False
 
-                    if exam_start_date_time <= old_exam_time <= exam_end_date_time:
+                    if old_exam_time.tzinfo is not None  \
+                            and (exam_start_date_time <= old_exam_time <= exam_end_date_time):
                         allowed_keep_old_exam = True
 
                     context.update({
