@@ -91,11 +91,6 @@
                            <input type="text" id="phone" class="form-control" value="{{ proctoru_user.phone_number }}" placeholder="{% trans '06 00 00 00 or +336 00 00 00' %}"/>
                        </div>
                        <div class="form-group">
-                           <label>{% trans "Adresse" %}</label>
-                           <label class="input-error" id="address-error-message"  style="display:none;">{% trans "*S&apos;il vous pla&icirc;t entrer votre adresse" %}</label>
-                           <input type="text" id="address" class="form-control"  value="{{ proctoru_user.address }}" placeholder="{% trans 'Appartement 123 Cit&eacute; des bosquets 10 rue de la Libert&eacute;' %}"/>
-                       </div>
-                       <div class="form-group">
                            <label>{% trans "Ville" %}</label>
                            <label class="input-error" id="city-error-message"  style="display:none;">{% trans "*S&apos;il vous pla&icirc;t entrer votre ville" %}</label>
                            <input type="text" id="city" class="form-control" value="{{ proctoru_user.city }}" placeholder="{% trans "Paris" %}"/>

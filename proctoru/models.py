@@ -20,8 +20,6 @@ class ProctoruUser(models.Model):
 
     time_zone_display_name = models.CharField(max_length=100)
 
-    address = models.TextField()
-
     city = models.CharField(max_length=50)
 
     country = models.CharField(max_length=50)

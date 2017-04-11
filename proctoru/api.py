@@ -45,8 +45,6 @@ class ProctoruAPI():
                     post_data.get('phone'))[:15],
                 time_zone=post_data.get(
                     'time_zone')[:60],
-                address=post_data.get(
-                    'address')[:100],
                 city=post_data.get('city')[:50],
                 country=post_data.get('country')[:2],
                 state="CA",
@@ -103,7 +101,6 @@ class ProctoruAPI():
                 'city': user.city,
                 'country': user.country,
                 'time_zone': user.time_zone,
-                'address': user.address,
                 'state': user.state,
             }
             return user_data
@@ -706,8 +703,6 @@ class ProctoruAPI():
                     user_data.get('phone'))[:15]
                 user.time_zone = str(user_data.get(
                     'time_zone')[:60])
-                user.address = user_data.get(
-                    'address')[:100]
                 user.city = user_data.get('city')[:50]
                 user.country = user_data.get('country')[:2]
                 user.time_zone_display_name = user_data.get(

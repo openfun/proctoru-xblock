@@ -10,7 +10,6 @@ function ProctorUXBlockCreate(runtime, element) {
             'phone':$(element).find("#phone").val(),
             'time_zone':$(element).find("#time-zone option:selected").val(),
             'tz_disp_name':$(element).find("#time-zone option:selected").text(),
-            'address':$(element).find("#address").val(),
             'city':$(element).find("#city").val(),
             'country':$(element).find("#country option:selected").val(),
         }
@@ -39,7 +38,6 @@ function ProctorUXBlockSchedule(runtime, element) {
         $(document).find("#country").val(cr);
 
         phone_number = $(element).find("#phone").val();
-        address = $(element).find("#address").val();
         city = $(element).find("#city").val();
         time_zone = $(element).find("#time-zone").val();
         country = $(element).find("#country option:selected").val();
@@ -107,7 +105,6 @@ function ProctorUXBlockSchedule(runtime, element) {
             'phone':$(element).find("#phone").val(),
             'time_zone':$(element).find("#time-zone option:selected").val(),
             'tz_disp_name':$(element).find("#time-zone option:selected").text(),
-            'address':$(element).find("#address").val(),
             'city':$(element).find("#city").val(),
             'country':$(element).find("#country option:selected").val(),
         }
@@ -126,7 +123,6 @@ function ProctorUXBlockSchedule(runtime, element) {
     $(element).find(".close-modal").click(function(){
         $('#user-info-modal').hide();
         $(element).find("#phone").val(phone_number);
-        $(element).find("#address").val(address);
         $(element).find("#country").val(city);
         $(element).find("#time-zone").val(time_zone);
         $(element).find("#country").val(country);
@@ -148,13 +144,6 @@ var createAccountFormValidation = function(data){
     } else {
         $("#phone-error-message").show();
         return false; 
-    }
-
-    if(data.address == "" | data.address.length > 100){
-        $("#address-error-message").show();
-        return false;
-    } else {
-        $("#address-error-message").hide();
     }
 
     if(data.city == "" | data.city.length > 50){
@@ -189,7 +178,6 @@ function ProctorUXBlockArrived(runtime, element) {
         $(document).find("#country").val(cr);
 
         phone_number = $(element).find("#phone").val();
-        address = $(element).find("#address").val();
         city = $(element).find("#country").val();
         time_zone = $(element).find("#time-zone").val();
         country = $(element).find("#country option:selected").val();
@@ -260,7 +248,6 @@ function ProctorUXBlockArrived(runtime, element) {
             'phone':$(element).find("#phone").val(),
             'time_zone':$(element).find("#time-zone option:selected").val(),
             'tz_disp_name':$(element).find("#time-zone option:selected").text(),
-            'address':$(element).find("#address").val(),
             'city':$(element).find("#city").val(),
             'country':$(element).find("#country option:selected").val(),
         }
@@ -280,7 +267,6 @@ function ProctorUXBlockArrived(runtime, element) {
     $(element).find(".close-modal").click(function(){
         $('#user-info-modal').hide();
         $(element).find("#phone").val(phone_number);
-        $(element).find("#address").val(address);
         $(element).find("#country").val(city);
         $(element).find("#time-zone").val(time_zone);
         $(element).find("#country").val(country);
