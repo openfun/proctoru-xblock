@@ -2,15 +2,16 @@ ProctorU xBlock
 ===============
 
 1. [About](https://github.com/perpetualny/proctoru-xblock#open-edx)
-	1. [Open edX](https://github.com/perpetualny/proctoru-xblock#open-edx)
-	2. [ProctorU](https://github.com/perpetualny/proctoru-xblock#proctoru)
-	3. [ProctorU xBlock](https://github.com/perpetualny/proctoru-xblock#proctoru)
+    1. [Open edX](https://github.com/perpetualny/proctoru-xblock#open-edx)
+    2. [ProctorU](https://github.com/perpetualny/proctoru-xblock#proctoru)
+    3. [ProctorU xBlock](https://github.com/perpetualny/proctoru-xblock#proctoru)
 2. [Architecture](https://github.com/perpetualny/proctoru-xblock#architecture)
 3. [Todo](https://github.com/perpetualny/proctoru-xblock#to-do)
 4. [Pre-Installation Requirements](https://github.com/perpetualny/proctoru-xblock#pre-installation-requirements)
 5. [Installation](https://github.com/perpetualny/proctoru-xblock#installation)
 6. [License](https://github.com/perpetualny/proctoru-xblock#license)
 
+[![CircleCI](https://circleci.com/gh/openfun/proctoru-xblock/tree/master.svg?style=svg)](https://circleci.com/gh/openfun/proctoru-xblock/tree/master)
 
 Open edX
 --------
@@ -40,14 +41,14 @@ Architecture
 
 To Do
 -------
-	[ ] English language support
-	[ ] Minor bug-fixes
+    [ ] English language support
+    [ ] Minor bug-fixes
 
 Pre-Installation Requirements
 --------------------------------------
-	1. Open edX Dogwood release
-	2. ProctorU Authentication Token
-	3. Django ( > v1.8 )
+    1. Open edX Dogwood release
+    2. ProctorU Authentication Token
+    3. Django ( > v1.8 )
 
 
 
@@ -55,23 +56,21 @@ Pre-Installation Requirements
 Installation
 -------------
 
-1. Clone xblock repo from https://github.com/perpetualny/proctoru-xblock.git to xBlock directory.
-2. Change directory to where you have cloned ProctorU XBlock.
-3. To install requirements for ProctorU XBlock. **Do not upgrade dependencies** this will break the Open edX installation
+1. To install ProctorU XBlock use the ``pip`` command in your Open edX instance:
 
-        pip install -r --no-deps requirements.txt
+        pip install --extra-index-url https://pypi.fury.io/openfun proctoru-xblock
 
-4. Open “ lms/envs/common.py “, " cms/env/common.py " and put “proctoru” in installed apps.
-5. Run migrations for proctorU XBlock:
+2. Open “ lms/envs/common.py “, " cms/env/common.py " and put “proctoru” in installed apps.
+3. Run migrations for proctorU XBlock:
 
         python manage.py lms migrate proctoru --settings=aws
 
-6. Add "PROCTORU_TOKEN" and "PROCTORU_API" in both lms and cms `envs/common.py` file and restart edxapp
+4. Add "PROCTORU_TOKEN" and "PROCTORU_API" in both lms and cms `envs/common.py` file and restart edxapp
 
         PROCTORU_TOKEN = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         PROCTORU_API = "x.proctoru.com"
 
-7. Restart edxapp
+5. Restart edxapp
 
         sudo /edx/bin/supervisorctl restart all
 
